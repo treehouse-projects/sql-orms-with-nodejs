@@ -1,3 +1,5 @@
+'use strict';
+
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize({
@@ -9,7 +11,6 @@ const sequelize = new Sequelize({
 class Movie extends Sequelize.Model {}
 Movie.init({
   title: Sequelize.STRING,
-  releaseYear: Sequelize.INTEGER
 }, { sequelize });
 
 (async () => {
@@ -24,7 +25,6 @@ Movie.init({
 
   // const movie = await Movie.create({
   //   title: 'Toy Story',
-  //   releaseYear: 1994
   // });
   // console.log(movie.toJSON());
 })();
@@ -32,7 +32,6 @@ Movie.init({
 // sequelize.sync()
 //   .then(() => Movie.create({
 //     title: 'Toy Story',
-//     releaseYear: 1994
 //   }))
 //   .then(movie => {
 //     console.log(movie.toJSON());
