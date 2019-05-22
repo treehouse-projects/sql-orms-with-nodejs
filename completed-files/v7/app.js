@@ -61,8 +61,8 @@ const { Op } = db.Sequelize;
     // console.log(movies.map(movie => movie.toJSON()));
     // console.log(JSON.stringify(movies));
 
-    const toyStory = await Movie.findOne({ where: { id: 1 } });
-    console.log(toyStory.toJSON());
+    // const toyStory = await Movie.findOne({ where: { id: 1 } });
+    // console.log(toyStory.toJSON());
 
     // const toyStory = await Movie.findByPk(1);
     // console.log(toyStory.toJSON());
@@ -84,21 +84,21 @@ const { Op } = db.Sequelize;
 
     // Deleting a record...
 
-    await toyStory.destroy();
+    // await toyStory.destroy();
 
-    const movies2 = await Movie.findAll({
-      attributes: ['id', 'title', 'deletedAt'],
-      // where: {
-      //   deletedAt: {
-      //     [Op.ne]: null,
-      //   },
-      // },
-      paranoid: false,
-    });
-    console.log(movies2.map(movie => movie.get({ plain: true })));
+    // const movies2 = await Movie.findAll({
+    //   attributes: ['id', 'title', 'deletedAt'],
+    //   // where: {
+    //   //   deletedAt: {
+    //   //     [Op.ne]: null,
+    //   //   },
+    //   // },
+    //   paranoid: false,
+    // });
+    // console.log(movies2.map(movie => movie.get({ plain: true })));
 
-    // const toyStory2 = await Movie.findByPk(1);
-    // console.log(toyStory2.toJSON());
+    // // const toyStory2 = await Movie.findByPk(1);
+    // // console.log(toyStory2.toJSON());
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
       const errors = error.errors.map(err => err.message);
